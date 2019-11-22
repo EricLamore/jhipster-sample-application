@@ -1,0 +1,89 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="operator">
+            <h2><span>Operator</span> {{operator.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Status</span></dt>
+                <dd>
+                    <span>{{operator.status}}</span>
+                </dd>
+                <dt><span>Phone Number</span></dt>
+                <dd>
+                    <span>{{operator.phoneNumber}}</span>
+                </dd>
+                <dt><span>Invitation Date</span></dt>
+                <dd>
+                    <span>{{operator.invitationDate}}</span>
+                </dd>
+                <dt><span>Invitation Url</span></dt>
+                <dd>
+                    <span>{{operator.invitationUrl}}</span>
+                </dd>
+                <dt><span>Update Access Date</span></dt>
+                <dd>
+                    <span>{{operator.updateAccessDate}}</span>
+                </dd>
+                <dt><span>Access Date</span></dt>
+                <dd>
+                    <span>{{operator.accessDate}}</span>
+                </dd>
+                <dt><span>Update Training Date</span></dt>
+                <dd>
+                    <span>{{operator.updateTrainingDate}}</span>
+                </dd>
+                <dt><span>Training Date</span></dt>
+                <dd>
+                    <span>{{operator.trainingDate}}</span>
+                </dd>
+                <dt><span>Has Succeeded MCQ</span></dt>
+                <dd>
+                    <span>{{operator.hasSucceededMCQ}}</span>
+                </dd>
+                <dt><span>Update QCM Date</span></dt>
+                <dd>
+                    <span>{{operator.updateQCMDate}}</span>
+                </dd>
+                <dt><span>Mcq Date</span></dt>
+                <dd>
+                    <span>{{operator.mcqDate}}</span>
+                </dd>
+                <dt><span>Training Session Id</span></dt>
+                <dd>
+                    <span>{{operator.trainingSessionId}}</span>
+                </dd>
+                <dt><span>Training Session URL</span></dt>
+                <dd>
+                    <span>{{operator.trainingSessionURL}}</span>
+                </dd>
+                <dt><span>Session Id</span></dt>
+                <dd>
+                    <span>{{operator.sessionId}}</span>
+                </dd>
+                <dt><span>Group Id</span></dt>
+                <dd>
+                    <span>{{operator.groupId}}</span>
+                </dd>
+                <dt><span>Meta Datas</span></dt>
+                <dd>
+                    <div *ngIf="operator.metaDatas">
+                        <a [routerLink]="['/map-properties', operator.metaDatas?.id, 'view']">{{operator.metaDatas?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/operator', operator.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
