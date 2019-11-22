@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="administrator">
+            <h2><span>Administrator</span> {{administrator.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>First Name</span></dt>
+                <dd>
+                    <span>{{administrator.firstName}}</span>
+                </dd>
+                <dt><span>Last Name</span></dt>
+                <dd>
+                    <span>{{administrator.lastName}}</span>
+                </dd>
+                <dt><span>Email Address</span></dt>
+                <dd>
+                    <span>{{administrator.emailAddress}}</span>
+                </dd>
+                <dt><span>Birth Date</span></dt>
+                <dd>
+                    <span>{{administrator.birthDate}}</span>
+                </dd>
+                <dt><span>Role</span></dt>
+                <dd>
+                    <span>{{administrator.role}}</span>
+                </dd>
+                <dt><span>Password</span></dt>
+                <dd>
+                    <span>{{administrator.password}}</span>
+                </dd>
+                <dt><span>Administrator Status</span></dt>
+                <dd>
+                    <span>{{administrator.administratorStatus}}</span>
+                </dd>
+                <dt><span>Admin Fonction</span></dt>
+                <dd>
+                    <span>{{administrator.adminFonction}}</span>
+                </dd>
+                <dt><span>Phone</span></dt>
+                <dd>
+                    <span>{{administrator.phone}}</span>
+                </dd>
+                <dt><span>Mobile Phone</span></dt>
+                <dd>
+                    <span>{{administrator.mobilePhone}}</span>
+                </dd>
+                <dt><span>Description</span></dt>
+                <dd>
+                    <span>{{administrator.description}}</span>
+                </dd>
+                <dt><span>Universign Admin</span></dt>
+                <dd>
+                    <span>{{administrator.universignAdmin}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/administrator', administrator.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
